@@ -1,0 +1,450 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #333;
+  color: #eee;
+}
+
+body {
+  font-family: "Montserrat";
+}
+
+.wrapper {
+  min-height: 100%;
+  // overflow: hidden;
+}
+
+.main {
+  padding-bottom: 30px;
+}
+
+[class*="__container"] {
+  margin: 0 auto;
+  max-width: 1110px;
+  padding: 0 15px;
+}
+
+// HEADER
+.header {
+  margin-bottom: 30px;
+  background-color: #222;
+  @media (max-width: 650px) {
+    margin-bottom: 20px;
+  }
+
+  &__container {
+  }
+
+  &__title {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    // font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.2px;
+  }
+}
+
+// MAIN
+
+.main {
+  &__container {
+    display: flex;
+    @media (max-width: 992px){
+        flex-direction: column;
+    }
+  }
+
+  &__column {
+    &:first-child {
+      padding-right: 20px;
+      flex: 0 0 65%;
+      @media (max-width: 992px) {
+        padding-right: 0;
+        flex: 1 1 auto;
+        margin-bottom: 20px;
+      }
+    }
+    &:last-child {
+      flex: 0 0 35%;
+      @media (max-width: 992px) {
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+  &__cards {
+  }
+  &__basket {
+  }
+}
+
+// CARDS
+.cards {
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px -20px;
+  }
+
+  &__card {
+    margin-bottom: 20px;
+    padding: 0 10px;
+    flex: 0 1 50%;
+    @media (max-width: 992px) {
+      flex-grow: 1;
+    }
+  }
+}
+.card {
+  &__body {
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__image {
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    font-size: 20px;
+  }
+
+  &__content {
+  }
+
+  &__amount {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__counter {
+  }
+
+  &__info {
+    text-align: right;
+  }
+
+  &__gramm {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  &__cost {
+    font-size: 20px;
+    white-space: nowrap;
+    &::after {
+      content: " ₽";
+    }
+  }
+
+  &__buy {
+    width: 100%;
+  }
+}
+.counter {
+  display: flex;
+  align-items: center;
+
+  & > * {
+    user-select: none;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    @media (max-width: 992px) {
+      width: 40px;
+      // height: 40px;
+    }
+  }
+
+  &__control {
+    cursor: pointer;
+    // font-weight: 700;
+    font-size: 25px;
+    &:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    &:last-child {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    @media (any-hover: hover) {
+      transition: all 0.2s ease 0s;
+      &:hover {
+        background-color: #444;
+      }
+    }
+    &:active {
+      background-color: #555;
+    }
+  }
+
+  &__current {
+  }
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #333;
+  color: #eee;
+  border: none;
+  @media (any-hover: hover) {
+    transition: all 0.2s ease 0s;
+    &:hover {
+      background-color: #444;
+    }
+  }
+  &:active {
+    background-color: #555;
+  }
+}
+
+// BASKET
+
+.basket {
+  // position: sticky;
+  // top: 20px;
+
+  &__body {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  &__title {
+    position: relative;
+    z-index: 222;
+    margin-top: 0;
+    text-align: center;
+  }
+
+
+  &__alert {
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #444;
+    // margin-bottom: 20px;
+  }
+
+  &__cart {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(238, 238, 238, 0.5);
+  }
+
+  &__delivery {
+    margin-bottom: 20px;
+    span {
+      font-size: 20px;
+      font-weight: 700;
+      &:first-child {
+        &::after {
+          content: " ₽";
+        }
+      }
+    }
+  }
+
+  &__total {
+    span {
+      color: rgb(172, 0, 0);
+      font-weight: 700;
+      font-size: 20px;
+      white-space: nowrap;
+      &::after {
+        content: " ₽";
+      }
+    }
+  }
+
+  &__order {
+    margin-top: 20px;
+  }
+}
+.order-basket {
+  border-top: 1px solid rgba(238, 238, 238, 0.5);
+
+  &__title {
+    text-align: center;
+  }
+
+  &__input {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+    background-color: #444;
+    color: #fff;
+    &::placeholder {
+      color: #eee;
+    }
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+}
+
+.basket {
+  &__cart {
+  }
+
+  & .card {
+    margin-bottom: 0;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    padding: 0;
+
+    &__body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 15px;
+    }
+
+    &__image {
+      width: 120px;
+      flex: 0 0 120px;
+      height: 100px;
+      @media (max-width: 400px) {
+        width: 70px;
+        flex: 0 0 70px;
+        height: 60px;
+      }
+    }
+
+    &__box {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__title {
+      flex: 1 1 auto;
+      text-align: left;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    &__content {
+    }
+
+    &__amount {
+      font-size: 12px;
+      margin-bottom: 0;
+      &:not(:last-child) {
+        &::after {
+          content: " / ";
+          padding-right: 5px;
+        }
+      }
+    }
+
+    &__row {
+      margin-bottom: 0;
+      align-items: flex-end;
+    }
+
+    &__counter {
+      & > * {
+        width: 30px;
+        height: 30px;
+      }
+
+      & .counter__control {
+        font-size: 18px;
+      }
+
+      & .counter__current {
+        font-size: 14px;
+      }
+    }
+
+    &__info {
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+    }
+
+    &__gramm {
+      text-align: left;
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+
+    &__cost {
+      font-size: 16px;
+    }
+
+    &__buy {
+    }
+  }
+}
+.green {
+  color: rgb(0, 110, 0);
+  &::after {
+    display: none;
+  }
+}
+.green-with-after {
+  color: rgb(0, 110, 0) !important;
+  &::after {
+    display: inline-block;
+  }
+}
+.small {
+  font-size: 14px !important;
+  color: #444;
+}

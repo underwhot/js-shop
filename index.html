@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- https://www.youtube.com/watch?v=pIgyoL5FjgI -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/style.css">
+  <title>js for shop (eCommers)</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container">
+        <div class="header__title">Доставка роллов</div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main__container">
+        <div class="main__column">
+          <div class="main__cards cards">
+            <div id="products-container" class="cards__body">
+              <!-- <div data-id='01' class="cards__card card">
+                <div class="card__body">
+                  <div class="card__image"><img src="./img/01.jpg" alt=""></div>
+                  <h3 class="card__title">Калифорния темпура</h3>
+                  <div class="card__content">
+                    <div class="card__amount">6 шт.</div>
+                    <div class="card__row">
+                      <div class="card__counter counter">
+                        <div class="counter__control" data-action="minus">-</div>
+                        <div class="counter__current" data-counter>1</div>
+                        <div class="counter__control" data-action="plus">+</div>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__gramm">205 г.</div>
+                        <div class="card__cost">300</div>
+                      </div>
+                    </div>
+                    <button data-cart type="button" class="card__buy button">Добавить в корзину</button>
+                  </div>
+                </div>
+              </div>
+              <div data-id='02' class="cards__card card">
+                <div class="card__body">
+                  <div class="card__image"><img src="./img/02.jpg" alt=""></div>
+                  <h3 class="card__title">Филадельфия хит ролл</h3>
+                  <div class="card__content">
+                    <div class="card__amount">6 шт.</div>
+                    <div class="card__row">
+                      <div class="card__counter counter">
+                        <div class="counter__control" data-action="minus">-</div>
+                        <div class="counter__current" data-counter>1</div>
+                        <div class="counter__control" data-action="plus">+</div>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__gramm">205 г.</div>
+                        <div class="card__cost">250</div>
+                      </div>
+                    </div>
+                    <button data-cart type="button" class="card__buy button">Добавить в корзину</button>
+                  </div>
+                </div>
+              </div>
+              <div data-id='03' class="cards__card card">
+                <div class="card__body">
+                  <div class="card__image"><img src="./img/03.jpg" alt=""></div>
+                  <h3 class="card__title">Запеченый ролл «Калифорния»</h3>
+                  <div class="card__content">
+                    <div class="card__amount">6 шт.</div>
+                    <div class="card__row">
+                      <div class="card__counter counter">
+                        <div class="counter__control" data-action="minus">-</div>
+                        <div class="counter__current" data-counter>1</div>
+                        <div class="counter__control" data-action="plus">+</div>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__gramm">182 г.</div>
+                        <div class="card__cost">230 </div>
+                      </div>
+                    </div>
+                    <button data-cart type="button" class="card__buy button">Добавить в корзину</button>
+                  </div>
+                </div>
+              </div>
+              <div data-id='04' class="cards__card card">
+                <div class="card__body">
+                  <div class="card__image"><img src="./img/04.jpg" alt=""></div>
+                  <h3 class="card__title">Филадельфия</h3>
+                  <div class="card__content">
+                    <div class="card__amount">6 шт.</div>
+                    <div class="card__row">
+                      <div class="card__counter counter">
+                        <div class="counter__control" data-action="minus">-</div>
+                        <div class="counter__current" data-counter>1</div>
+                        <div class="counter__control" data-action="plus">+</div>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__gramm">230 г.</div>
+                        <div class="card__cost">320 </div>
+                      </div>
+                    </div>
+                    <button data-cart type="button" class="card__buy button">Добавить в корзину</button>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="main__column">
+          <div class="main__basket basket">
+            <div class="basket__body">
+              <h3 class="basket__title">Ваш заказ</h3>
+              <div class="basket__alert">Корзина пуста</div>
+              <div class="basket__cart">
+              </div>
+              <div hidden class="basket__delivery">Доставка: <span>250</span> <br> <span class="small">Бесплатно при
+                  заказе от 600 ₽</span></div>
+              <div class="basket__total">Итого: <span>0</span></div>
+              <form hidden action="#" class="basket__order order-basket">
+                <h3 class="order-basket__title">Оформить заказ</h3>
+                <input autocomplete="off" type="phone" name="form[]" data-error="Ошибка"
+                  placeholder="Ваш номер телефона" class="order-basket__input">
+                <button class="order-basket__button button" type="submin">Заказать</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./js/renderProducts.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>
